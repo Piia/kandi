@@ -1,0 +1,77 @@
+@inproceedings{RefWorks:doc:59c154d7e4b00694fa917fd2,
+	author={Sebastian Elbaum and Gregg Rothermel and John Penix},
+	year={2014},
+	title={Techniques for Improving Regression Testing in Continuous Integration Development Environments},
+	publisher={ACM},
+	address={New York, NY, USA},
+	pages={235$\-$245},
+	abstract={In continuous integration development environments, software engineers frequently integrate new or changed code with the mainline codebase. This can reduce the amount of code rework that is needed as systems evolve and speed up development time. While continuous integration processes traditionally require that extensive testing be performed following the actual submission of code to the codebase, it is also important to ensure that enough testing is performed prior to code submission to avoid breaking builds and delaying the fast feedback that makes continuous integration desirable. In this work, we present algorithms that make continuous integration processes more cost$\-$effective. In an initial pre$\-$submit phase of testing, developers specify modules to be tested, and we use regression test selection techniques to select a subset of the test suites for those modules that render that phase more cost$\-$effective. In a subsequent post$\-$submit phase of testing, where dependent modules as well as changed modules are tested, we use test case prioritization techniques to ensure that failures are reported more quickly. In both cases, the techniques we utilize are novel, involving algorithms that are relatively inexpensive and do not rely on code coverage information $\-$$\-$ two requirements for conducting testing cost$\-$effectively in this context. To evaluate our approach, we conducted an empirical study on a large data set from Google that we make publicly available. The results of our study show that our selection and prioritization techniques can each lead to cost$\-$effectiveness improvements in the continuous integration process.},
+	url={http://doi.acm.org/10.1145/2635868.2635910},
+	doi={10.1145/2635868.2635910}
+}
+@inproceedings{RefWorks:doc:59c154cbe4b00efdbe2281d3,
+	author={Michael Hilton},
+	year={2016},
+	title={Understanding and Improving Continuous Integration},
+	publisher={ACM},
+	address={New York, NY, USA},
+	pages={1066$\-$1067},
+	abstract={Continuous Integration (CI) has been widely adopted in the software development industry. However, the usage of CI in practice has been ignored for far too long by the research community. We propose to fill this blind spot by doing in$\-$ depth research into CI usage in practice. We will answer how questions by using using quantitative methods, such as investigating open source data that is publicly available. We will answer why questions using qualitative methods, such as semi$\-$structured interviews and large scale surveys. In the course of our research, we plan on identifying barriers that developers face when using CI. We will develop techniques to overcome those barriers via automation. This work is advised by Professor Danny Dig.},
+	url={http://doi.acm.org/10.1145/2950290.2983952},
+	doi={10.1145/2950290.2983952}
+}
+@inproceedings{RefWorks:doc:59c154bee4b083d4aaa16b45,
+	author={Atif Memon and Zebao Gao and Bao Nguyen and Sanjeev Dhanda and Eric Nickell and Rob Siemborski and John Micco},
+	year={2017},
+	title={Taming Google$\-$scale Continuous Testing},
+	publisher={IEEE Press},
+	address={Piscataway, NJ, USA},
+	pages={233$\-$242},
+	abstract={Growth in Google's code size and feature churn rate has seen increased reliance on continuous integration (CI) and testing to maintain quality. Even with enormous resources dedicated to testing, we are unable to regression test each code change individually, resulting in increased lag time between code check$\-$ins and test result feedback to developers. We report results of a project that aims to reduce this time by: (1) controlling test workload without compromising quality, and (2) distilling test results data to inform developers, while they write code, of the impact of their latest changes on quality. We model, empirically understand, and leverage the correlations that exist between our code, test cases, developers, programming languages, and code$\-$change and test$\-$execution frequencies, to improve our CI and development processes. Our findings show: very few of our tests ever fail, but those that do are generally "closer" to the code they test; certain frequently modified code and certain users/tools cause more breakages; and code recently modified by multiple developers (more than 3) breaks more often.},
+	url={https://doi.org/10.1109/ICSE$\-$SEIP.2017.16},
+	doi={10.1109/ICSE$\-$SEIP.2017.16}
+}
+@inproceedings{RefWorks:doc:59c154b0e4b029007aae2a5a,
+	author={de S. Campos Junior, Heleno and Camila Acácio de Paiva and Regina Braga and Marco Antônio P. Araújo and José Maria N. David and Fernanda Campos},
+	year={2017},
+	title={Regression Tests Provenance Data in the Continuous Software Engineering Context},
+	publisher={ACM},
+	address={New York, NY, USA},
+	pages={10:1$\-$10:6},
+	abstract={Regression tests are executed after every change in software. In a software development environment that adopts Continuous Software Engineering practices such as Continuous Integration, Continuous Delivery and Continuous Deployment, software is changed, built and tested many times. Every regression test execution may include different situations and problems that are treated in isolated way. Data provenance is concerned with the origins and processes that some data has gone through, until it becomes information. Ontologies are formal models that contain axioms and relationships between classes and individuals from a specific context and can be used to infer implicit knowledge. Considering that Continuous Software Engineering activities are based on feedback cycles, in this paper, we propose an architecture based on the use of an ontology and provenance model to capture and provide regression tests data to support the continuous improvement of software testing processes. Moreover, using ontology and provenance to track execution performance and issues in this scenario, may increase the chances of those issues not happening again, since practitioners can address and solve them for future executions.},
+	url={http://doi.acm.org/10.1145/3128473.3128483},
+	doi={10.1145/3128473.3128483}
+}
+@inproceedings{RefWorks:doc:59c1196ce4b029007aae13dc,
+	author={Nan Li and Jin Guo and Jeff Lei and Yao Li and Chang Rao and YaXin Cao},
+	year={2016},
+	title={Towards Agile Testing for Railway Safety$\-$critical Software},
+	publisher={ACM},
+	address={New York, NY, USA},
+	pages={18:1$\-$18:4},
+	abstract={EN 50128 gives a general guidance for testing railway safety$\-$critical software. However, it does not specify how to test safety$\-$critical software in an agile development environment. Based on our observation, agile software development has not been applied to the development of the Chinese Train Control System (CTCS). Previous research focused on agile methods for managing and planning safety$\-$critical software development. There exists little research about agile testing for developing railway safety$\-$critical software in the literature. In this paper, we identify several major shortcomings of the existing practice of testing railway safety$\-$critical software in China. In particular, we find out, that Continuous Integration (CI) and Continuous Delivery (CD) are missing from the current practice of agile testing. Furthermore, effective techniques and tools are lacking for CTCS. To address these shortcomings, we propose an agile testing framework for developing railway safety$\-$critical software. In this framework, a build automation tool manages source code, unit tests, integration tests, resources and other tools. This test framework supports CI and CD, making agile testing possible. In addition, it includes effective unit and integration testing tools that allow rigorous tests to be generated. We believe this test framework will not only be applied to railway software, but also used for other safety$\-$critical software.},
+	url={http://doi.acm.org/10.1145/2962695.2962713},
+	doi={10.1145/2962695.2962713}
+}
+@inproceedings{RefWorks:doc:59c1195ce4b063d049a381fc,
+	author={Sebastian V�st and Stefan Wagner},
+	year={2016},
+	title={Trace$\-$based Test Selection to Support Continuous Integration in the Automotive Industry},
+	publisher={ACM},
+	address={New York, NY, USA},
+	pages={34$\-$40},
+	abstract={System testing in the automotive industry is a very expensive and time$\-$consuming task of growing importance, because embedded systems in the domain are distributed over numerous controllers (ECUs). Modern software development techniques such as continuous integration require regular, repeated and fast testing. To achieve this in the automotive domain, test suites for a specific software change must be tailored. We propose a novel test selection technique for system$\-$level functions in the automotive industry based on component and communication models. The idea is to follow input and output signals that are used in the testing steps through the ECUs implementing a function. We select only those tests for a planned integration in which at least one of the signals sent in its steps is processed by the ECU that was changed and thus triggered the integration. The technique is well$\-$suited for black$\-$box testing since it requires only the full test suite specification and the system architecture. We applied the technique to a test suite of the Active Cruise Control function at BMW Group in the context of hardware$\-$in$\-$the$\-$loop system testing and found the possible reduction rates to be 82.3$\$\%$$ on average in comparison to the full test suite. Possible future work includes the evaluation with a wider set of functions, the evaluation of the fault detection rate, further automation and combination with other test selection techniques.},
+	url={http://doi.acm.org/10.1145/2896941.2896951},
+	doi={10.1145/2896941.2896951}
+}
+@inproceedings{RefWorks:doc:59c1194fe4b00694fa915ba1,
+	author={Adriaan Labuschagne and Laura Inozemtseva and Reid Holmes},
+	year={2017},
+	title={Measuring the Cost of Regression Testing in Practice: A Study of Java Projects Using Continuous Integration},
+	publisher={ACM},
+	address={New York, NY, USA},
+	pages={821$\-$830},
+	abstract={Software defects cost time and money to diagnose and fix. Consequently, developers use a variety of techniques to avoid introducing defects into their systems. However, these techniques have costs of their own; the benefit of using a technique must outweigh the cost of applying it. In this paper we investigate the costs and benefits of automated regression testing in practice. Specifically, we studied 61 projects that use Travis CI, a cloud$\-$based continuous integration tool, in order to examine real test failures that were encountered by the developers of those projects. We determined how the developers resolved the failures they encountered and used this information to classify the failures as being caused by a flaky test, by a bug in the system under test, or by a broken or obsolete test. We consider that test failures caused by bugs represent a benefit of the test suite, while failures caused by broken or obsolete tests represent a test suite maintenance cost. We found that 18$\%$ of test suite executions fail and that 13$\$\%$$ of these failures are flaky. Of the non$\-$flaky failures, only 74$\$\%$$ were caused by a bug in the system under test; the remaining 26$\%$ were due to incorrect or obsolete tests. In addition, we found that, in the failed builds, only 0.38$\%$ of the test case executions failed and 64$\%$ of failed builds contained more than one failed test. Our findings contribute to a wider understanding of the unforeseen costs that can impact the overall cost effectiveness of regression testing in practice. They can also inform research into test case selection techniques, as we have provided an approximate empirical bound on the practical value that could be extracted from such techniques. This value appears to be large, as the 61 systems under study contained nearly 3 million lines of test code and yet over 99$\%$ of test case executions could have been eliminated with a perfect oracle.},
+	url={http://doi.acm.org/10.1145/3106237.3106288},
+	doi={10.1145/3106237.3106288}
+}
