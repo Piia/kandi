@@ -1,0 +1,35 @@
+% !TEX root = aine.tex
+\section{Jatkuva integraatio}
+
+\subsection{Yksi yhteinen koodivarasto}
+
+Jatkuvan integraation myötä samaa ohjelmakoodia muokkaavat kymmenet, sadat tai jopa tuhannet ohjelmistokehittäjät. Heidän kaikkien tulisi kommitoida tekemänsä muutokset vähintään kerran päivässä, joten ohjelmisto muuttuu alati. Ohjelmiston toimivuus ja oikeellisuus vaarantuvat muutoksessa. On huomattu, että paras tapa ehkäistä virheiden kasaantumista ja isoja rakenteellisia ongelmia on toteuttaa muutokset ja korjata virheet mahdollisimman tiuhaan. Kun kaikki ohjelmiston kehittämiseen osallistuvat ohjelmistokehittäjät työskentelevät yhteisen ohjelmakoodin parissa, ohjelman uusimman version toimimattomuudesta tulee yhteinen ongelma. 
+\par
+Ohjelmistokehittäjät eivät voi työskennellä luotettavasti rikkinäisen ohjelmiston parissa. Siksi testitoiminnot ovat tärkeässä asemassa. Ohjelmistokehittäjän tulee kommitoida vain toimivaksi testattuja kokonaisuuksia, jotta ohjelmiston yhteinen päälinja pysyisi mahdollisimman stabiilina. Jatkuvan integraation palvelimen antama palaute läpi menneistä testeistä toimii vakuutena koko ohjelmistokehitystiimille siitä, että he voivat luottaa rakentavansa työnsä toimivan kokonaisuuden päälle. 
+
+
+
+
+\subsection{Regressiotestaaminen validoi muutokset}
+
+Nimestään huolimatta jatkuva integraatio ei nojaudu ohjelmiston testaamisessa pelkästään integraatiotestaamiseen, jossa testataan ohjelmiston eri osien yhteensopivuus. Sen sijaan regressiotestaamista käytetään tarkistamaan koko ohjelmiston toimivuus ja oikeellisuus. 
+
+Tässä olisi hyvä tilaisuus kertoa vähän lisää regressiotestaamisesta. 
+mitä ongelmia regressiotestaaminen ratkaisee
+mitä se vaatii
+miten se toteutetaan
+jne...
+
+
+
+
+\subsection{Kustannustehokkuus}
+
+
+Jatkuvan integraation hyöty on kiistaton verrattuna erilliseen ohjelmiston kehityksen jälkeen suoritettavaan integraatiovaiheeseen. Kerro lisää hyödyistä. Sitten kerro haitoista tai ongelmista.
+
+Regressiotestaaminen vie työaikaa eli rahaa. Testien kehittämiseen ja ylläpitoon menee helposti yhtä paljon aikaa kuin itse ohjelmakoodin kirjoittamiseen. Palvelinta pitää ylläpitää. Googlellakaan ei riitä resurssit kaikkien työntekijöiden jokapäiväisiin tai tiheämpien kommitointien buildaamiseen ja testaamiseen... sitä voi tehostaa ajamalla testejä möykkyinä kerran tunnissa yms.
+
+
+
+\clearpage
