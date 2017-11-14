@@ -1,0 +1,45 @@
+\cite{MGN+17}
+\cite{ERP14}
+
+\section{Case: Jatkuva integraatio Googlella}
+
+
+Googlella jatkuvan integraation palvelimen asemassa toimii testialusta TAP, joka tulee sanoista Test Automation Platform. TAP suorittaa päivittäin 800 000 koontiversiota, mikä on suuruusluokkaa yksi per sekunti. Googlella on huomattu, että jatkuvan integraation vaatimat resurssit kasvavat nelinkertaisesti suhteessa aikaan, sillä sekä lähetysmäärä että testipohjan koko kasvavat lineaarisesti. \cite{MGN+17}
+
+Kuten nimestä voikin päätellä, jatkuva integraatio on Googlella testikeskeistä.\cite{MGN+17} TAP:n vastuulla on sekä pre- että post-testaaminen ja post-testaamiseen pääsee vain jos pre-testaaminen onnistui. \cite{ERP14} Kommitien määrä ja koodipohjan koko ovat valtavia, jonka vuoksi kaikkea ei voida testata ja toisaalta koodipohjan analysointiin perustuvien työkalujen käyttöäkään ei voi tehdä. \cite{MGN+17} Ohjelmistokehittäjät kirjoittavat itse testit ja kokoavat testikokonaisuuden, mutta testaamisessa ja testi-infran ylläpidossa on oma tiiminsä. Kaikissa testikohteissa käytetään XUnit-tyyppistä testikehystä, mikä mahdollistaa testaamisen keskittämisen, kun kaikkia testikohteita voidaan käsitellä samalla tavalla. \cite{ERP14}
+
+Ohjelmistokehittäjät liittävät TAP:lle lähetettävään kommitiin muutoslistan (changelist), joka sisältää tiedon muutoksien sijainnista. Googlen koodipohja on jaettu paketteihin (package), joita vastaavat itsenäisesti koottavat testikohteet (test-target). TAP aloittaa kommitin käsittelyn muutoslistasta, jonka perusteella etsitään myös muut testikohteet, joihin on riippuvuuksia tai jotka riippuvat muuttuneista kohteista.  \cite{MGN+17} \cite{ERP14} Näitä riippuvuuskohteita tosin approksimoidaan rankalla kädellä. \cite{ERP14} 
+
+TAP ei aja testikohteita heti, vaan se odottaa seuraavan virstanpylvään (milestone) kulumista. Yksi virstanpylväs on kolme varttia. Kuvassa \ref{fig_changelist} on esitelty kommitien kerääntyminen yhden virstanpylvään aikana. Kun koontiversiot suoritetaan, jokaisesta testikohteesta ajetaan ainoastaan viimeisin kommit. Tämä säästää aikaa ja resursseja, vaikka toisaalta ohjelmistokehittäjä voi joutua odottamaan testituloksia täyden virstanpylvään verran. Lisäviipeitä aiheuttavat esimerkiksi muistin loppuminen, ohjelman kaatuminen tai laitteisto-ongelmat. \cite{MGN+17} Testitulokset ilmoitetaan testikohteen tarkkuudella. \cite{MGN+17} \cite{ERP14} Ne ilmoitetaan kommitin lähettäneelle ohjelmistokehittäjälle ja hänen tulee korjata epäonnistuneet kohteet välittömästi. \cite{ERP14}
+
+
+
+
+Tap-design on testing-centric. \cite{MGN+17} \cite{ERP14}
+Ei kannata testata joka kommitia. \cite{MGN+17}
+Resurssien tarve nelinkertaistuu => lineaarisesti sekä submission rate että test code base \cite{MGN+17}
+Post-submit testaamiseen pääsee vain, jos pre-submit onnistuu. \cite{ERP14}
+Massiiviselle koodipohjalle ei oikein voi suorittaa code instrumentia eli tyyliin change analyysiä. \cite{MGN+17}
+
+Tap aloittaa aina changelistin katsomisella. Reverse dependencyllä katsotaan kaikki affected targets ja muut packaget \cite{MGN+17} \cite{ERP14}
+Kuvassa \ref{fig_changelist} on esitelty kommitien kerääntyminen yhden virstanpylvään aikana. Kun koontiversiot suoritetaan, jokaisesta testikohteesta ajetaan vain viimeinen kommit. \cite{MGN+17}
+
+Test target on oma koottava yksikkö, jossa on erilaisia testejä. \cite{MGN+17}
+Testikokonaisuudet/target? käyttävät hyödyksi erikoisettua XUnit-tyyppistä kehystä, jossa mittava suoritus ja seurantatuki. Se yleistää toiminnan, jolloin testaaminen voidaan keskittää. \cite{ERP14}
+Testaaminen on pääosin automatisoitua, mutta joskus ihmisen arviota tarvitaan. \cite{ERP14}
+Koodipohjaan viitataan paketteina, mikä on hyödyllistä, koska???. \cite{MGN+17}
+pass/fail on aina target-kohtainen arvo \cite{MGN+17} \cite{ERP14}
+
+Devaajat tekee testikokonaisuudet/targetit?, mutta "testaamisen", automatisoinnin ja testi-infran hoitaa oma testiporukka. \cite{ERP14}
+
+Reverse dependecies tehdään build filujen kautta, eli riippuvuudet, ohjelmointikielet, siihen vaikuttaa myös miten ohjelmoija on organisoinut koodit ja testit. Myös targetit, jotka riippuvat kommitista.  \cite{MGN+17} \cite{ERP14} Ne yliapproksimoidaan. \cite{ERP14}
+
+Ajetaan toisiinsa liittyvät kommitit yhdessä 45 min välein. \cite{MGN+17}
+Kaikkia targeteja ei ajeta. Milestonenin tapahtuessa vain uusin ajetaan! Se säästää aikaa ja resursseja. \cite{MGN+17}
+Lisäviipeitä voi tulla out of memory, kaatuminen, infraongelmat. \cite{MGN+17}
+Devaajaa infotaan failuresta ja hänen on korjattava virheensä heti. \cite{ERP14}
+
+
+
+
+

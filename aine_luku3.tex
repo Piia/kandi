@@ -1,0 +1,26 @@
+% !TEX root = aine.tex
+\section{Testikokoelman muodostaminen}
+
+Regressiotestaamisella pyritään ohjelmiston laadun kasvuun ja ohjelmistokehityksen kustannusten vähentämiseen. Regressiotestaamista rajoittavat palvelin- ja henkilöresurssit. Kuten edellisessä luvussa todettiin, kaikkia mahdollisia testejä ei ole yleensä mahdollista tai järkevää ajaa jokaisessa integraatiossa, minkä vuoksi regressiotestaamista varten muodostetaan oma testikokonaisuus. Yleisimmät tekniikat tällaisen testikokonaisuuden muodostamisessa ovat kokonaisuuden minimointi, sopivien testien valinta ja testien ajojärjestyksen priorisointi. Testikokonaisuuden muodostamisessa voi myös käyttää useampia tekniikoita ja tekniikoita voi myös vaihdella testiajojen mukaan. 
+
+\subsection{Tekniikat}
+
+Testikokonaisuuden minimointi edellyttää varmuutta siitä, että minimoitu testikokonaisuus todella riittää ohjelmiston testaamiseen ja virheiden löytämiseen. Eräs minimointimenetelmä on tarkastella muutoksen vaikuttavuutta ohjelmistossa ja testata vain näitä osia. 
+
+Testikokonaisuuden muodostaminen valinnalla voidaan toteuttaa käsin tai ohjelmallisesti. Kummallakin menetelmällä on tarkoitus valita asiantuntemuksen perusteella relevanteimmat testit. Esimerkiksi käyttäytymiseen perustuva regressiotestaaminen (behavioral regression testing) on menetelmä, jolla ohjelmistokehittäjien valitsemien regressiotestien lisäksi käytetään itsestään generoituvia testejä. Niillä pyritään varmistamaan ohjelmiston oikeellisuuden lisäksi myös sitä, että oikeellisuus tuotetaan tarkoitetulla tavalla.
+
+Testien priorisoiminen tarkoittaa sitä, että valitaan mitkä testitapaukset ajetaan ensin. Näin testaamisesta syntyvä palaute saadaan nopeammin tärkeistä testeistä ja palaute saadaan silloinkin, kun ohjelmiston testaaminen keskeytyy esimerkiksi virheen tai muistin loppumisen myötä. Testitapausten priorisointijärjestys tulee suoraan ohjelmiston vaatimusten priorisointijärjestyksestä. 
+
+
+\subsection{Historiatietojen kerääminen}
+
+Erilaisia historiatietoja voi käyttää testikokonaisuuden muodostamisen tukena tai pohjana. Esimerkiksi toistuvasti hylkäävien testien voidaan olettaa testaavan ohjelmiston hauraita osia, jolloin jatkossa niitä testejä voidaan ajaa useammin. Samoin jatkuvasti läpi menevät testit voivat olla turhia ja niitä ei tarvitse ajaa joka integraatiossa. 
+
+Testidatan kulkureitistä ja läpikäymistä prosesseista kerättävä metadata (provenance data) on monikäyttöistä. Metadatan keräämisestä ja analysoimisesta on hyötyä regressiotestaamisen optimoinnissa ja lisäksi tekniikkaa käytetään tieteellisissä kokeissa. Metadataa kerätään yleensä joko tarkoituksena tuottaa tietoa tulevaa testaamista varten tai yksityiskohtia edellisistä testiajoista. 
+
+Sekä testiajojen historiasta että metadatan analysoimisesta voi muodostaa parempaa palautetta ohjelmistokehittäjille. Esimerkiksi ohjelmistokehittäjä voisi saada tilastotietoja omista integraatioistaan ja yksityiskohtaisia kehitysehdotuksia parantamaan integraatioiden onnistumisprosenttia. Lisäksi integraation onnistumiseen ja epäonnistumiseen liittyvien tekijöiden tunnistaminen tehostaa ohjelmistokehitystä. 
+
+
+
+
+\clearpage

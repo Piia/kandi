@@ -1,0 +1,20 @@
+Sis‰ltˆ
+1) Johdanto 
+Sivuja: 1
+Lis‰t‰‰n: 1 sivu teksti‰ jatkuvasta integraatiosta.
+2) Ohjelmistokehitt‰jien n‰kemykset, sivuja 2 => 4	2.1 Esteet   
+	2.2 K‰yt‰ntˆ
+Sivuja: 2	
+Lis‰t‰‰n: 2 sivua teksti‰ t‰ydent‰m‰‰n jo kirjoitettua + taulukko + kuva?
+	3) Regressiotestaaminen	3.2 Testikokonaisuuden muodostaminen
+	3.3 Historiatietojenker‰‰minen 
+	3.4 Kustannukset 
+Sivuja: 4
+Lis‰t‰‰n: 2 sivua teksti‰ t‰ydent‰m‰‰n jo kirjoitettua.	
+	4) Yhteenveto
+Sivuja: 2	
+	
+Sivuja t‰ll‰ hetkell‰: 9 
+Sivuja tulevaisuudessa: 14
+
+Sivuja pit‰‰ viel‰ keksi‰: 4

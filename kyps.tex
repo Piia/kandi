@@ -1,0 +1,27 @@
+\documentclass{tktltiki}
+\begin{document}
+
+\title{Näkemykseni jatkuvasta integraatiosta}
+\author{Piia Hartikka}
+\date{\today}
+\level{Kypsyysnäyte}
+
+\maketitle
+\doublespacing
+\pagenumbering{arabic}
+
+\faculty{Matemaattis-luonnontieteellinen}
+\department{Tietojenkäsittelytieteen laitos}
+
+Jatkuva integraatio on ohjelmistotuotannossa suurta suosiota saavuttanut työskentelytapa. Se syntyi ratkaisuna perinteisen ohjelmistotuotannon vaikeaan ja aikaavievään integraatiovaiheeseen. Perusperiaate on integroida päivittäin uusi koodi ohjelmiston pääversioon ja ratkaista integraatio-ongelmat ennen niiden paisumista suuriksi. Jatkuva integraatio rytmittää ohjelmistokehittäjän arkea seuraavasti: Hän vetää ohjelmiston uusimman version työpisteelleen, työskentelee ja testaa työnsä. Lopuksi, eli vähintään kerran päivän aikana, ohjelmistokehittäjä kommitoi tekemänsä muutokset ohjelmiston pääversioon. 
+
+Integraatiossa ohjelmisto kootaan automaattisesti jatkuvan integraation palvelimella, jonka tarkoitus on olla mahdollisimman neutraali ja todenmukainen testiympäristö. Jatkuvan integraation palvelin ilmoittaa koontiversion onnistumisesta tai epäonnistumisesta koko ohjelmistokehitystiimille. Epäonnistuminen voi tarkoittaa koonnin epäonnistumista, eli esimerkiksi ongelmaa riippuvuuksien löytämisessä, tai testien epäonnistumista. Epäonnistunut koontiversio on korjattava välittömästi, sillä ohjelmistokehitystiimi työskentelee yhdessä ohjelmiston pääversion parissa.
+
+Automatisoitu testaaminen onkin jatkuvan integraation kulmakivi. Sillä tarkoitetaan yleensä jatkuvan integraation palvelimella suoritettavaa regressiotestaamista, jossa validoidaan kommitin tuomat muutokset. Ohjelmistokehittäjän tulee kommitoida vain toimivaksi testattua koodia, mutta muutoksilla on aina riski vaikuttaa ohjelmistoon ennalta-arvaamattomilla tavoilla. Regressiotestaaminen on jatkuvassa integraatiossa tärkeä osa kokonaisuutta, jossa samaan koodivarastoon kommitoi satoja tai tuhansia ohjelmistokehittäjiä.
+
+Jatkuvan integraation suurin hyöty on virheiden löytäminen ajoissa, mikä parantaa projektien ennustettavuutta ja pienentää julkaisuväliä. Suosio ja suitsutus antavat kuitenkin ymmärtää, että jatkuvasta integraatiosta olisi vain hyötyä. Suurissa ohjelmistoprojekteissa on nähtävissä kuinka jatkuvan integraation omaksumisen myötä testipohjan tekoon ja ylläpitämiseen sekä testiajojen suorittamiseen kuluvat resurssit kasvavat lineaarisesti. Tämän seurauksena kirjallisuudessa on esitetty kompromisseja tehostamaan jatkuvan integraation pahinta resurssisyöppöä, regressiotestaamista. Kompromissien teko ei tietenkään ole tietojenkäsittelytieteessä tai ohjelmistotuotannossa vierasta, sillä laskenta-, palvelin- ja henkilöstöresurssit ovat aina olleet rajalliset. On siis vain sopivaa etsiä ratkaisuja jatkuvan integraation toteuttamisesta johtuvien riskien hallitsemiseen. 
+
+Jatkuva integraatio on tullut jäädäkseen ja se on kiistattomasti paras tapa hallita integraatioiden riskejä. Jatkuvan integraation rutiininomainen suorittaminen tuottaa projekteista tilastoja, jotka avaavat ovia muidenkin mielenkiintoisten ilmiöiden tutkimiselle. Esimerkiksi kommitien koontiversioiden onnistumistilastot tarjoavat mahdollisuuden tutkia koontiversion epäonnistumista muusta kuin jatkuvan integraation näkövinkkelistä. Näin on saatu selville, että Java-ohjelmoijat onnistuvat C-ohjelmoijia useammin ja parikoodaaminen todella kannattaa. Jatkuva integraatio ja sen tutkimus on vasta alussa, joten kysymyksiä riittää.
+
+\lastpage
+\end{document}

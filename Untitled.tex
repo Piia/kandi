@@ -1,0 +1,84 @@
+% !TEX root = kandi.tex
+
+\section{Jatkuva integraatio}
+
+
+Jatkuva integraatio on suosittu työskentelytapa ohjelmistoteollisuuden \cite{MSB17} ja avoimen lähdekoodin projekteissa. \cite{HTH+16} Suurissa, tuhansia ohjelmistokehittäjiä työllistävissä yrityksissä työskentelevät ohjelmistokehittäjät suhtautuvat erittäin myönteisesti jatkuvaan integraatioon antaen asteikolla 1-5 arvosanaksi 4,13. \cite{MSB17} Avoimen lähdekoodin projekteissa työskentelevät ohjelmistokehittäjät käyttäisivät mielellään jatkuvaa integraatiota seuraavassa projektissaan, mikä näkyy kuvassa \ref{fig3}. Mitä suositumpi projekti, sitä todennäköisemmin projektia tehdään jatkuvasti integroiden. Jatkuva integraatio myös alentaa kynnystä ottaa osaa avoimen lähdekoodin projektiin. \cite{HTH+16} Suurin osa ohjelmistokehittäjistä integroi työnsä suositusten mukaisesti vähintään kerran päivässä. Tämä tahti nähdään sopivana sekä omassa että toisten ohjelmistokehittäjien työssä. \cite{MSB17} 
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{fig3.pdf}
+    \caption{Käyttäisivätkö avoimen lähdekoodin projekteissa työskentelevät ohjelmistokehittäjät jatkuvaa integraatiota seuraavassa projektissaan. \cite{HTH+16}}
+    \label{fig3}
+\end{figure}
+
+Avoimen lähdekoodin projektien keskuudessa jatkuvan integraation käyttö on kasvanut jyrkästi viime vuosina. Ilmiö on nähtävissä kuvassa \ref{fig2}, josta käy ilmi jatkuvan integraation huimasti kasvanut suosio. Trendikkyydestä huolimatta jatkuvan integraation suosion ei odoteta laskevan tulevaisuudessa. \cite{HTH+16} Ohjelmistokehittäjät itse näkevät jatkuvan integraation tärkeänä ja hyödyllisenä työskentelytapana. Toisaalta toteutus koetaan hankalana, kuten erityisesti testikokonaisuuden kokoaminen regressiotestaamista ja testiympäristöjä silmälläpitäen. \cite{MSB17} Kaikki ohjelmistokehittäjät eivät tunne jatkuvaa integraatiota tarpeeksi ja yliopistot voisivatkin opettaa sitä enemmän. \cite{HTH+16}
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{fig2.pdf}
+    \caption{Avoimen lähdekoodin projektit, joissa käytetään jatkuvaa integraatiota. \cite{HTH+16}}
+    \label{fig2}
+\end{figure}
+
+Jatkuvasta integraatiosta on kiistatta hyötyä \cite{HTH+16}, mutta sen saama suitsutus on ylimitoitettua. \cite{SB13} Hyvä esimerkki tästä on ohjelmistokehittäjien taipumus vältellä koontiversion (build) testien epäonnistumista. Huolellisuus on hyve, mutta ei aina kustannustehokasta, mikäli työaikaa kuluu turhaan. \cite{HTH+16} Ohjelmistokehittäjät noudattavat jatkuvan integraation tarkkoja käytänteitä mielellään, jos se on järkevää. Esimerkiksi modulaarisen arkkitehtuurin parissa työskentelevät ohjelmistokehittäjät eivät koe tarvetta integroida omaa työtään ohjelmiston versionhallinnan päälinjaan, vaan he perustavat sinne oman sivuhaaran (branch). \cite{MSB17} 
+
+
+
+\subsection{Koontiversio}
+
+Integraatiossa ohjelmisto kootaan, jolloin ohjelmakoodin sisältämät automatisoidut testit ajetaan jatkuvan integraation palvelimella. Palvelin antaa palautetta koonnin ja testaamisen onnistumisesta. \cite{Fow06} Koontiversion epäonnistuessa ohjelmistokehitystiimin kuuluu tehdä välittömästi toimenpiteitä, joilla koontiversion status muuttuu onnistuneeksi. \cite{LGL+16} Tämä on tosin ristiriidassa käytännön havaintojen kanssa, joiden mukaan koontiversion statuksesta ja laadusta ei viestitä tarpeeksi. \cite{SB13}
+
+Testaaminen ennen integraatiota on tärkeää, jotta koontiversion status pysyy onnistuneena. \cite{ERP14} Näin ohjelmistokehittäjät voivat luottaa työskentelevänsä toimivaksi testatun ohjelmiston kanssa. \cite{MSB17} Turvallisuuskriittisissä ohjelmistoissa testaaminen on erityisen tärkeää ja tällaiseen ohjemistoon kohdistuvat muutokset ovat erilaisia kuin esimerkiksi web-applikaatioissa. \cite{LGL+16} Ketterän testaamisen harjoittaminen korreloi jatkuvan integraation kanssa, mutta kausalisaatiota tuskin esiintyy \cite{SB13}, vaikka niin väitetäänkin. \cite{LGL+16} Varmaa on, että jatkuva integraatio tukee virheiden löytämistä ja helpottaa versioiden yhteenliittämistä (merge). \cite{SB13}
+
+Koontiversion epäonnistumiseen johtava tärkein ja hyödyllisin syy on virhe ohjelmistossa. Kun koontiversio epäonnistuu, virhe löydetään ja se voidaan korjata. Muut epäonnistumiseen johtavat syyt sen sijaan hidastavat jatkuvaa integraatiota ja aiheuttavat kustannuksia ohjelmistotuotannossa. \cite{LIH17} Nämä ovat sekä teknisiä että sosiaalisia syitä, kuten riittämättömät ja virheelliset testit tai liian tiukka aikataulu. Ohjelmistokehittäjät myös luottavat liikaa testien virheettömyyteen. \cite{PRC17} Siispä testaaminen ja erityisesti integraatiossa suoritettava regressiotestaaminen on isoin ja tärkein jatkuvan integraation osa-alue, jonka tarkastelua jatkuvan integraation yhteydessä ei voi jättää tekemättä. \cite{ERP14}
+
+<Tähän KOONTIVERSION EPÄONNISTUMINEN>
+
+
+
+\subsection{Hyvät ja huonot puolet}
+
+Jatkuvan integraation tärkein hyöty on virheiden löytyminen aikaisin \cite{PRC17} \cite{HTH+16}, minkä vuoksi projektien aikataulu on helpommin ennustettavissa. \cite{SB13} Sen omaksuminen nopeuttaa ohjelmistotuotantoprosessia ja mahdollistaa ripeämmän julkaisusyklin. \cite{PRC17} Lisäksi avoimen lähdekoodin projekteissa puoltopyynnöt (pull request) hyväksytään nopeammin. \cite{HTH+16} Jatkuva integraatio lisää sekä sisäistä että ulkoista viestintää, mikä mahdollistaa rinnakkaisen ohjelmistokehityksen. \cite{SB13}
+
+Testaaminen on olennainen osa jatkuvaa integraatiota \cite{LGL+16}, mutta testien kirjoittamiseen ja ylläpitämiseen menee jopa yhtä paljon työaikaa kuin itse ohjelmakoodin kirjoittamiseen. \cite{LIH17} Lisäkustannuksia voi tulla projektista riippuen ostopalveluista ja välineistä. Testeihin myös luotetaan liikaa, vaikka ne voivat olla epädeterministisiä tai kattavuudeltaan huonoja. \cite{PRC17} 
+
+Jatkuva integraatio vaatii ohjelmistokehittäjiltä itsekuria, ainakin aluksi. Työyhteisöllä tulee olla hyvä testaamiskulttuuri ja käytänteet on tehtävä selväksi myös uusille työntekijöille.  \cite{PRC17} Kuten aiemmin käytiin läpi, ohjelmistokehittäjät myös välttelevät liikaa koontiversion testien epäonnistumista. \cite{HTH+16} Ohjelmistokehittäjät toteuttaisivatkin integraatiot useammin, mikäli työ olisi pilkottavissa ja järkevästi ajoitettu. Ohjelmiston arkkitehtuurilta toivotaan modulaarisuutta ja testaamisessa työkalujen ja prosessien olisi hyvä olla nopeita ja helppoja. Haasteena olisi siis tehdä ohjelmistokehittäjille ympäristö ja olosuhteet, joissa he voisivat helpommin toteuttaa jatkuvaa integraatiota. Taulukossa \ref{tab:taulukko1} näkyy teemakartoitus ohjelmistokehittäjien esteistä kommitoida päivittäin ohjelmiston versionhallinnan päälinjaan. \cite{MSB17}
+
+\begin{table}[!htbp]
+  \centering
+	\input{taulukko1}
+  \caption{Teemakartoitus ohjelmistokehittäjien esteistä kommitoida päivittäin ohjelmiston versionhallinnan päälinjaan. \cite{MSB17}}
+  \label{tab:taulukko1}
+\end{table}
+
+Jatkuva integraatio on työskentelytapana sellainen, että se rytmittää ohjelmistokehittäjän arkea. \cite{Fow06} Tämän vuoksi jatkuvan integraation prosessien vaivattomuudella on iso vaikutus ohjelmistokehittäjän tyytyväisyyteen ja halukkuuteen toteuttaa jatkuvaa integraatiota. \cite{MSB17} Esimerkiksi automatisoitu testaaminen ja neutraalin jatkuvan integraation palvelimen käyttäminen testaamiseen helpottaa virheiden löytymistä \cite{PRC17}, mutta silti ohjelmiston kehitys- ja testaamisvälineet eivät aina ole yhteensopivia \cite{LGL+16} ja jatkuvan integraation palvelimen configuroiminen on hankalaa. \cite{PRC17} Jatkuva integraatio voi myös hämärtää eri testitoimintojen rajoja. \cite{LGL+16} 
+
+
+
+
+\subsection{Case: Jatkuva integraatio Googlella}
+
+
+Googlella jatkuvan integraation palvelimen asemassa toimii testialusta TAP, joka tulee sanoista Test Automation Platform. TAP suorittaa päivittäin 800 000 koontiversiota, mikä on suuruusluokkaa yksi per sekunti. Googlella on huomattu, että jatkuvan integraation vaatimat resurssit kasvavat nelinkertaisesti suhteessa aikaan, sillä sekä lähetysmäärä että testipohjan koko kasvavat lineaarisesti. \cite{MGN+17}
+
+Kuten nimestä voikin päätellä, jatkuva integraatio on Googlella testikeskeistä.\cite{MGN+17} TAP:n vastuulla on sekä pre- että post-testaaminen ja post-testaamiseen pääsee vain jos pre-testaaminen onnistui. \cite{ERP14} Kommitien määrä ja koodipohjan koko ovat valtavia, jonka vuoksi kaikkea ei voida testata ja toisaalta koodipohjan analysointiin perustuvien työkalujen käyttöäkään ei voi tehdä. \cite{MGN+17} Ohjelmistokehittäjät kirjoittavat itse testit ja kokoavat testikokonaisuuden, mutta testaamisessa ja testi-infran ylläpidossa on oma tiiminsä. Kaikissa testikohteissa käytetään XUnit-tyyppistä testikehystä, mikä mahdollistaa testaamisen keskittämisen, kun kaikkia testikohteita voidaan käsitellä samalla tavalla. \cite{ERP14}
+
+Ohjelmistokehittäjät liittävät TAP:lle lähetettävään kommitiin muutoslistan (changelist), joka sisältää tiedon muutoksien sijainnista. Googlen koodipohja on jaettu paketteihin (package), joita vastaavat itsenäisesti koottavat testikohteet (test-target). TAP aloittaa kommitin käsittelyn muutoslistasta, jonka perusteella etsitään myös muut testikohteet, joihin on riippuvuuksia tai jotka riippuvat muuttuneista kohteista.  \cite{MGN+17} \cite{ERP14} Näitä riippuvuuskohteita tosin approksimoidaan rankalla kädellä. \cite{ERP14} 
+
+TAP ei aja testikohteita heti, vaan se odottaa seuraavan virstanpylvään (milestone) kulumista. Yksi virstanpylväs on kolme varttia. Kuvassa \ref{fig_changelist} on esitelty kommitien kerääntyminen yhden virstanpylvään aikana. Kun koontiversiot suoritetaan, jokaisesta testikohteesta ajetaan ainoastaan viimeisin kommit. Tämä säästää aikaa ja resursseja, vaikka toisaalta ohjelmistokehittäjä voi joutua odottamaan testituloksia täyden virstanpylvään verran. Lisäviipeitä aiheuttavat esimerkiksi muistin loppuminen, ohjelman kaatuminen tai laitteisto-ongelmat. \cite{MGN+17} Testitulokset ilmoitetaan testikohteen tarkkuudella. \cite{MGN+17} \cite{ERP14} Ne ilmoitetaan kommitin lähettäneelle ohjelmistokehittäjälle ja hänen tulee korjata epäonnistuneet kohteet välittömästi. \cite{ERP14}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{fig_changelist.pdf}
+    \caption{Kommitien kerääntyminen yhden virstanpylvään aikana. Joka testikohteesta ajetaan vain viimeisimmät kommitit, jotka näkyvät mustina neliöinä.  \cite{MGN+17}}
+    \label{fig_changelist}
+\end{figure}
+
+
+
+
+
+\clearpage

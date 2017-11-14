@@ -1,0 +1,36 @@
+% !TEX root = aine.tex
+\section{Jatkuva integraatio}
+
+Ohjelmistokehittäjien mielestä jatkuva integraatio on hyvä työskentelytapa, koska he saavat jatkuvan integraation myötä jatkuvasti palautetta työstään. Jatkuvan integraation esteiksi koetaan eniten testikokonaisuuden riittämättömyys sekä testaamisen hitaus ja vaivalloisuus. 
+
+Jatkuvan integraation testitoiminnot voidaan jakaa karkeasti kahteen luokkaan: testaaminen ennen integraatiota ohjelmistokehittäjän omalla työkoneella ja jatkuvan integraation palvelimella suoritettava ohjelmiston testaaminen. Ohjelmistokehittäjän on testattava työnsä ennen integraatiota välttääkseen turhaan rikkomasta yhteistä ohjelmakoodia. 
+
+
+\subsection{Yksi yhteinen koodivarasto}
+
+Jatkuvan integraation myötä samaa ohjelmakoodia muokkaavat kymmenet, sadat tai jopa tuhannet ohjelmistokehittäjät ja heidän kaikkien tulee kommitoida tekemänsä muutokset vähintään kerran päivässä. Ohjelmisto on alati muutoksien kohteena ja ohjelmiston toimivuus ja oikeellisuus vaarantuvat joka muutoksessa. Paras tapa ehkäistä virheiden kasaantumista ja isoja rakenteellisia ongelmia on toteuttaa muutokset ja korjata virheet mahdollisimman tiuhaan. 
+
+Testitoimintojen toimivuus on iso osa jatkuvan integraation toimimista ja ohjelmistokehittäjien kokemaa tyytyväisyyttä jatkuvaan integraatioon. Ohjelmistokehitystiimi ei voi työskennellä luotettavasti rikkinäisen ohjelmiston parissa. Siispä jatkuvan integraation palvelimen antama palaute testien läpäisystä toimii vakuutena koko ohjelmistokehitystiimille, että työtä voi jatkaa rauhassa ja se rakentuu toimivan kokonaisuuden päälle. Uudet virheet voidaan paikantaa muutoksen tarkkuudella, eikä kenenkään työtä sotketa turhaan. 
+
+
+
+\subsection{Regressiotestaaminen validoi muutokset}
+
+Regressiotestaamista käytetään koko ohjelmiston toimivuuden ja oikeellisuuden testaamiseen muutoksien jälkeen. Ohjelmiston koko ja testien määrä on yleensä suuri, joten ei ole missään määrin järkevää, että kaikki ohjelmiston parissa työskentelevät ohjelmistokehittäjät ajaisivat kaikki olemassaolevat testit päivittäin. Tämän vuoksi regressiotestaamista varten kootaan erikseen testikokonaisuus.
+
+Integraatiotesteillä testataan sisäisesti ohjelmiston eri osien yhteensopivuus. Järjestelmätesteillä ajetaan ulkoisesti testitapauksia, jotka on tehty ohjelmistolle asetettujen vaatimuksien pohjalta. Järjestelmätesteillä saadaan selville ohjelmiston oikeellisuus. Regressiotestien ei tarvitse testata yksikkötesteillä uudelleen yksittäisiä koodinpätkiä, sillä ohjelmistokehittäjät testaavat työnsä huolellisesti työkoneellaan ennen integraatiota. Siitä huolimatta testikokonaisuuteen voidaan lisätä ohjelmiston toimivuuden kannalta tärkeitä yksikkötestejä.
+
+Regressiotestaaminen suoritetaan jatkuvan integraation palvelimella neutraalissa testiympäristössä. Jatkuvan integraation palvelimen on tarkoitus tuottaa puolueeton ja luotettava testitulos, joka vertautuu ohjelmiston käyttämiseen oikeissa tuotanto-olosuhteissa. 
+
+
+
+\subsection{Kustannukset}
+
+Jatkuva integraatio on kustannustehokkaampi kuin integraatio erillisenä tuotantovaiheena. Jatkuva integraatio lisää ohjelmistotuotantoprosessin läpinäkyvyyttä, kun ohjelmistoon syntyneet virheet tulevat heti koko ohjelmistokehitystiimin tietoon. Pienet virheet ovat nopeampia korjata kuin suuret, mikä vähentää työtunteja ja ehkäisee aikataulun venymistä. Virheiden huomaaminen ennen niiden paisumista isoiksi ongelmiksi ehkäisee rikkonaisen ikkunan syndroomaa, eli ohjelmistokehittäjien taipumusta olla tarttumatta liian suuriin ongelmiin.
+
+Toisaalta testitoimintojen ylläpitämiseenkin kuluu työaikaa. Pelkästään regressiotestien kehittämiseen ja ylläpitoon voi kulua yhtä paljon työaikaa kuin itse ohjelmakoodin kirjoittamiseen ja regressiotestaaminen on vain yksi osa ohjelmiston testaamista. Ohjelmiston lisäksi myös testeissä itsessään voi olla virheitä, joiden tunnistaminen ja korjaaminen voi olla hankalaa. Testitoiminnot voi myös rakentaa osin ulkopuolisen palveluntarjoajan palveluiden varaan, mutta tällöin testejä voi joutua muuttamaan jokaisen palveluntarjoajan tekemän muutoksen myötä. 
+
+Jatkuva ohjelmiston kokoaminen ja testien ajaminen voi johtaa palvelinresurssien riittämättömyyteen. Esimerkiksi Googlen testipalvelimella ajetaan päivittäin 800 000 integraatiota. Siellä resurssien riittämättömyys on ratkaistu niin, että palvelin kokoaa ja testaa 45 minuutin välein kertyneet kommitit. Iso osa ajetuista testeistä meni aina läpi, joten niitä päätettin ajaa harvemmin. 
+
+
+\clearpage
