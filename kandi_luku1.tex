@@ -1,10 +1,21 @@
 % !TEX root = kandi.tex
 \section{Johdanto}
 
-Jatkuva integraatio korvaa perinteisen ohjelmistokehityksen päättävän integraatiovaiheen. Se on työskentelytapa, jossa ohjelmistokehittäjä integroi työtään vähintään kerran päivässä ohjelmistokehityksen päälinjaan. Ohjelmistokehittäjä aloittaa työskentelynsä hakemalla ohjelmiston uusimman version yhteisestä koodivarastosta ja kommitoi tehdyn ja testatun työn uusimmaksi versioksi saman päivän aikana. Integraatiossa ohjelmisto kootaan ja ohjelmakoodin sisältämät automatisoidut testit ajetaan jatkuvaan integraatioon varatulla palvelimella. \cite{Fow06}
+Jatkuva integraatio korvaa perinteisen ohjelmistokehityksen päättävän integraatiovaiheen. Se on työskentelytapa, jossa ohjelmistokehittäjä integroi työtään vähintään kerran päivässä ohjelmistokehityksen päälinjaan. Ohjelmistokehittäjä aloittaa työskentelynsä hakemalla ohjelmiston uusimman version yhteisestä koodivarastosta ja kommitoi tehdyn ja testatun työn uusimmaksi versioksi saman päivän aikana. Integraatiossa ohjelmisto kootaan ja ohjelmakoodin sisältämät automatisoidut testit ajetaan jatkuvaan integraatioon varatulla palvelimella. Tämä on esitetty myös kuvassa \ref{nuolikaavio}. Jatkuvassa integraatiossa jokainen kehityssykli loppuu vasta kuin jatkuvan integraation palvelin ilmoittaa kommitin koontiversion (build) onnistumisesta \cite{Fow06}. 
 
-Regressiotestaamisella varmistetaan ohjelmiston oikeellisuus muutoksien jälkeen. Regressiotestaaminen voidaan toteuttaa esimerkiksi valitsemalla kokemuksen perusteella sopiva joukko yksikkö-, integraatio- ja järjestelmätestejä. LÄHDE Kaikkien mahdollisten testien suorittaminen ei ole kannattavaa, sillä se kuluttaa palvelinresursseja ja viivyttää palautteen saamista. Ohjelmiston kokoamisen ja testien ajamisen pitäisi suosituksen mukaan kestää alle kymmenen minuuttia. Testikokonaisuutta voi rajata priorisoimalla testitapauksia tai arvioimalla testien kriittisyyttä. Regressiotestejä kehitetään ajan kuluessa varsinaisen ohjelmakoodin rinnalla. \cite{LIH17}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{nuolikaavio.png}
+    \caption{Jatkuva integraatio käytännössä.}
+    \label{nuolikaavio}
+\end{figure}
 
-Tämän kandidaatintutkielman luvussa yksi arvioidaan jatkuvaa integraatiota. Luvussa kaksi käsitellään regressiotestaamisen kustannustehokkuutta ja \par toteutustapoja. 
+Jatkuvan integraation testitoiminnot voidaan jakaa karkeasti kahteen luokkaan: testaaminen ennen kommitointia ja kommitoinnin jälkeen. Kommitoinnin jälkeen suoritettavalla testaamisella tarkoitetaan testaamista ohjelmiston koonnin (build) yhteydessä jatkuvan integraation palvelimella. Projektista riippuen kommitointia edeltävä testaaminen voi tapahtua ohjelmistokehittäjän työkoneella tai erillisellä testipalvelimella \cite{ERP14}. Ohjelmistokehittäjän on testattava työnsä ennen integraatiota välttääkseen turhaan rikkomasta ohjelmiston pääversiota, sillä koko ohjelmistokehitystiimi työskentelee sen parissa \cite{MSB17}.
+
+Regressiotestaamisella varmistetaan ohjelmiston oikeellisuus muutoksen jälkeen. Regressiotestaaminen voidaan toteuttaa esimerkiksi valitsemalla kokemuksen perusteella sopiva joukko yksikkö-, integraatio- ja järjestelmätestejä. Kaikkien mahdollisten testien suorittaminen ei ole kannattavaa, sillä se kuluttaa palvelinresursseja ja viivyttää ohjelmiston tilasta kertovan palautteen saapumista. Ohjelmiston kokoamisen ja testien ajamisen kun pitäisi suosituksen mukaan kestää alle kymmenen minuuttia. Testikokonaisuutta voi rajata priorisoimalla testitapauksia tai valitsemalla informatiivisimmat testit koodipohjan (codebase) analysoinnin perusteella. Regressiotestejä kehitetään ajan kuluessa varsinaisen ohjelmakoodin rinnalla ja siihen voi kulua yhtä paljon työaikaa kuin varsinaiseen ohjelmistokehitykseen \cite{LIH17}.
+
+Jatkuva integraatio on ohjelmistotuotannossa suhteellisen nuori menetelmä. Historiallisesti sen esitteli ensimmäisen kerran Grady Booch vuonna 1991, mutta vasta 1990-luvun lopulla se otettiin osaksi Extreme Programming -metodologiaa. Jatkuva integraatio levisi ja sai laajaa kannatusta Martin Fowlerin kirjoitettua siitä blogitekstin vuonna 2000 ja julkaistua myöhemmin myös kirjan \cite{SB13}. Vielä vuonna 2016 jatkuvan integraation tutkimusta on pidetty vähäisenä \cite{HTH+16}. 
+
+Tämän kandidaatintutkielman luvussa yksi käsitellään jatkuvaa integraatiota koontiversion, hyvien ja huonojen puolien ja tapauskertomuksen kautta. Luvussa kaksi esitetään regressiotestaamisen rooli ja kustannukset jatkuvassa integraatiossa.
 
 \clearpage

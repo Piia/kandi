@@ -1,14 +1,13 @@
 
 JATKUVA INTEGRAATIO
 
-1) Johdanto (3 sivua)
-2) Jatkuva integraatio (2+2+1=5 sivua)
-	2.1) <Hyv‰t ja huonot puolet>
-	2.2) <Integraatio>
-3) Regressiotestaaminen jatkuvassa integraatiossa (2+2+2+1=7 sivua)
-	3.1) <Pullonkaula>
-	3.2) <Mik‰ rikkoo buildin>
-	3.3) <Testaaminen Googlella>
+1) Johdanto (3 sivua) == 2 sivua
+2) Jatkuva integraatio (2+2+2+2=8 sivua)
+	2.1) Koontiversio => kirjoita yksi sivu koontiversion ep‰onnistumisesta
+	2.1) Hyv‰t ja huonot puolet
+	2.2) Case: Jatkuva integraatio Googlella
+3) Regressiotestaaminen jatkuvassa integraatiossa (3+2=5 sivua)
+	3.1) Kustannukset
 4) Yhteenveto  (2 sivua)
 
 = 17s sivua
@@ -21,6 +20,16 @@ KIRJOITUSSUUNNITELMA
 Yksitt‰isten sitaattien lis‰ksi olemassa oleva teksti: Fowler \cite{Fow06} ja Shore \cite{Sho10}. Yksi sivu lis‰‰!
 Historiakatsaus: Grady Booch 1991, XP 90-luvun lopulla, Fowler 2000. \cite{HTH+16} \cite{SB13}
 Ei tutkittu tarpeeksi ja lis‰‰ vois tai n‰in ajateltiin vuosina 2013 ja 2016. \cite{HTH+16} \cite{SB13} Esim. projektien eroja, syy-seuraussuhteita \cite{SB13}, yritysten v‰lisi‰ eroja \cite{MSB17}. 
+
+
+Jatkuvan integraation testitoiminnot voidaan jakaa karkeasti kahteen luokkaan: testaaminen ennen kommitointia ja kommitoinnin j‰lkeen. Kommitoinnin j‰lkeen tapahtuvalla testaamisella tarkoitetaan jatkuvan integraation palvelimella tapahtuvaa testaamista. Projektista riippuen kommitointia edelt‰v‰ testaaminen voi tapahtua ohjelmistokehitt‰j‰n tyˆkoneella tai erillisell‰ testipalvelimella. Ohjelmistokehitt‰j‰n on testattava tyˆns‰ ennen integraatiota v‰ltt‰‰kseen turhaan rikkomasta yhteist‰ ohjelmakoodia. \cite{ERP14}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{nuolikaavio.png}
+    \caption{Jatkuva integraatio k‰yt‰nnˆss‰.}
+    \label{nuolikaavio}
+\end{figure}
 
 
 2) Jatkuva integraatio (2+2+1=5 sivua)
@@ -89,6 +98,46 @@ Kaavioita \cite{LIH17} \cite{MGN+17}
 Google on poikkeuksellinen paikka. Siell‰ on helkkaristi jengi‰ ymp‰ri maailmaa ja jatkuvasti kasvava jatkuvan integraation m‰‰r‰ on mahdoton haaste jopa Googlen resursseille. Googlen pre- ja post-submit-testaaminen tapahtuu testipalvelimella, jonne ohjelmistokehitt‰j‰ l‰hett‰‰ "changelistin", jossa on kyseiseen ajoon liittyv‰t "testikohteet". Testipalvelin priorisoi tyylill‰‰n. Lis‰ksi yleens‰ kolmen vartin v‰lein ajetaan jono, eli v‰ltet‰‰n samojen testikohteiden ajamista lyhyen ajan sis‰‰n. T‰ll‰ on hyvi‰ ja huonoja puolia. \cite{ERP14} \cite{MGN+17}
 Kaavioita \cite{ERP14} \cite{MGN+17}
 Ehk‰ v‰h‰n ehdotuksesta tehokkaammaksi priorisointi- ja valintamenetelm‰ksi. Tai sitten siit‰ voisi ottaa vain yleisesti sit‰, mitk‰ lainalaisuudet p‰tee ison testisysteemin tehostamisessa. \cite{ERP14} 
+
+
+MISC
+- regressiotestaaminen on yleist‰, eli suoritetaan usein testikokonaisuus testaamaan muutoksien vaikutus \cite{LIH17}
+- mergetty koodi regressiotestataan, jotta koodipohja pysyisi stabiilina ja sen kanssa voisi tyˆskennell‰ \cite{ERP14}
+- testaamisen on oltava kustannustehokasta \cite{ERP14}
+- jatkuvassa integraatiossa skaalautuvuus on ongelma \cite{ERP14}
+- testaaminen on sit‰ t‰rke‰mp‰‰, mit‰ l‰hemp‰n‰ tuotantoa ollaan, siksi kustannustehokkuus \cite{ERP14}
+- testikokonaisuus rajataan yleens‰ niihin, jotka tuottavat eniten hyˆdyllist‰ tietoa, eli tehd‰‰n riippuvuusanalyysi, modulaarinen build-rakenne, testataan rinnakkain osia joihin muutos vaikuttaa \cite{ERP14}
+
+
+VIRHEET MAKSAA
+- ohjelmiston virheet maksavat aikaa ja rahaa, lis‰ksi bugit vaikuttavat uusiin ja vanhoihin asiakkaisiin ja siksi on kehitetty tekniikoita ehk‰isem‰‰n ja lˆyt‰m‰‰n ne \cite{LIH17}
+
+
+REGRESSIOTESTAAMINEN MAKSAA
+- toisaalta regressiotestaamisen kustannukset ovat suurin syy olla ottamatta sit‰, hyˆdyn t‰ytyy ylitt‰‰ kustannukset ja etenkin devaajien tulee tuntea tyˆpanoksen olevan sen arvoista \cite{LIH17}
+- KATSO PROSENTIT FAILEISTA \cite{LIH17}
+- post-testaus voi olla erityisen kallista, koska iso m‰‰r‰ riippuvaa koodia, suhteellisen paljon tarvittavia moduuleita jotka voivat olla tahoillaan tyˆn alla, joten pre-testaus on vitun t‰rkeet‰ \cite{ERP14}
+- toisaalta pre-testauksesta ei saa muodostua pullonkaula, kun devaajat v‰ltt‰v‰t buildin rikkoutumista ja resursseja ei saa tuhlata turhaan t‰h‰n \cite{ERP14}
+- ongelmia postissa: testikokonaisuudet kasvavat, resurssit menev‰t, resurssit meni jo press‰ \cite{ERP14}
+
+
+MIKƒ AUTTAA
+- all in all: testikokonaisuuden valinnalla on iso merkitys regressiotestaamisen kustannustehokkuuteen \cite{LIH17}
+- virheiden lˆyt‰miseen kehitetyt tekniikat maksavat, joten tekniikkaa valitessa pit‰‰ punnita hyˆdyt ja haitat \cite{LIH17}
+- kustannukset per test suite = mitk‰ syyt johtavat ep‰onnistumiseen \cite{LIH17}
+- RTS ja TCP suosituimmat tekniikat, mutta niit‰ on vaikea k‰ytt‰‰ yksin‰‰n jatkuvassa integraatiossa, koska suureella koodipohjalla on vaikea ajaa analyysityˆkaluja \cite{ERP14}
+- kustannustehokkuutta voi kasvattaa strategialla, joka perustuu RTS:‰‰n ja TCP:hen: PREss‰ aikaikkunalla rajataan kokonaisuuksia ja se perustuu tietoon aiemmista suorituksista ja niiden onnistumisista. POSTssa aikaikkuna ja priorisointi => RTS on PREss‰ iso parannus ja POSTssa TCP parantaa palauteaikaa \cite{ERP14}
+- regressiotestaamisen pit‰‰ olla kevyit‰ analyysien suhteen jatkuvassa integraatiossa \cite{ERP14}
+
+
+
+
+
+
+
+
+
+
 
 
 4) Yhteenveto (2 sivua)
